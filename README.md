@@ -1,7 +1,7 @@
 # Characters_Detection
 
 # 简介
-    A Chinese Characters && Arabic Numbers Detection Model Based on YOLO.
+    A Chinese Characters && Arabic Numbers Detection Project Based on YOLO.
 
 # 环境依赖
     1) Request python3
