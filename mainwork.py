@@ -68,11 +68,11 @@ parser.add_argument('--serial', type=str, default='/dev/ttyUSB0',
 parser.add_argument('--buardrate', type=str, default='115200', help='Buardrate of USART')
 parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
 
-# about cv:
+# about CV:
 parser.add_argument('--weights', nargs='+', type=str, default='./weights/arabic_numbers.pt', help='{model}.pt')
 parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
-parser.add_argument('--conf-thres', type=float, default=0.92, help='object confidence threshold')
-parser.add_argument('--iou-thres', type=float, default=0.3, help='IoU threshold for NMS')
+parser.add_argument('--conf-thres', type=float, default=0.90, help='object confidence threshold')
+parser.add_argument('--iou-thres', type=float, default=0.30, help='IoU threshold for NMS')
 parser.add_argument('--classes', nargs='+', type=int, help='filter by class: --class 0, or --class 0 2 3')
 parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
 parser.add_argument('--augment', action='store_true', help='augmented inference')
@@ -107,6 +107,7 @@ half = device.type != 'cpu'  # half precision only supported on CUDA
 
 # Get Model:
 model = attempt_load(weights, map_location=device)  # load FP32 model
+print('**********************')
 print('Get Model Completed!')
 print('**********************')
 
